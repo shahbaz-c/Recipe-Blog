@@ -633,6 +633,12 @@ article img {
   border-bottom: 1px solid #ddd;
 }
 
+@media (max-width: 767px) {
+  .searchInput {
+    display: none;
+  }
+}
+
 /* --------------------------------------------------------------------------------- */
 /* Recipe Template */
 
