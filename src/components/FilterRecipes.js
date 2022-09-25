@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect, useRef } from "react"
 
 import setupFilters from "../utilities/setupFilters"
 import { Link } from "gatsby"
@@ -11,17 +11,39 @@ const FilterRecipes = ({ recipes }) => {
     setSearchTerm(e.target.value)
   }
 
+  const [openFilters, setOpenFilters] = useState(false)
+  const ref = useRef()
+
+  const handleFilters = () => {
+    setOpenFilters(prev => !prev)
+  }
+
+  useEffect(() => {
+    const closeDropdown = e => {
+      if (e.path[0] !== ref.current) {
+        setOpenFilters(false)
+      }
+    }
+
+    document.body.addEventListener("click", closeDropdown)
+
+    return () => {
+      document.body.removeEventListener("click", closeDropdown)
+    }
+  }, [])
+
   const newFilters = setupFilters(recipes)
 
   return (
     <div>
       <section className="filter-container">
         <div className="dropdown">
-          <button className="dropdown-btn">
+          <button className="dropdown-btn" ref={ref} onClick={handleFilters}>
             <Icon icon="bx:filter-alt" inline={true} /> Filter
           </button>
 
-          <div className="dropdown-content">
+          {/* <div className="dropdown-content"> */}
+          <div className={openFilters ? "dropdown-content" : "hide-filters"}>
             <input
               type="text"
               placeholder="Search..."
