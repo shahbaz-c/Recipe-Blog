@@ -42,7 +42,6 @@ const FilterRecipes = ({ recipes }) => {
             <Icon icon="bx:filter-alt" inline={true} /> Filter
           </button>
 
-          {/* <div className="dropdown-content"> */}
           <div className={openFilters ? "dropdown-content" : "hide-filters"}>
             <input
               type="text"

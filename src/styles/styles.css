@@ -617,10 +617,6 @@ article img {
   border-radius: 5px;
 }
 
-/* .dropdown:hover .dropdown-content {
-  display: block;
-} */
-
 .dropdown-content {
   display: block;
 }
@@ -641,11 +637,11 @@ article img {
   border-bottom: 1px solid #ddd;
 }
 
-/* @media (max-width: 767px) {
+@media (max-width: 767px) {
   .searchInput {
     display: none;
   }
-} */
+}
 
 /* --------------------------------------------------------------------------------- */
 /* Recipe Template */
