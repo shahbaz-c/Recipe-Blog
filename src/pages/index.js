@@ -1,5 +1,6 @@
 import React from "react"
 
+import "../styles/styles.css"
 import Layout from "../global/Layout"
 import Showcase from "../components/Showcase"
 import Recent from "../components/Recent"
