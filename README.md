@@ -12,4 +12,4 @@ Iconify was used for icons.
 
 ### `Project URL`
 
-https://recipe-blog.shahbazchoudhary.com/
+https://recipe-blog.shahbazc.com/
